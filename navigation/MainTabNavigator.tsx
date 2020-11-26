@@ -21,6 +21,7 @@ export default function MainTabNavigator() {
       initialRouteName="Chats"
       tabBarOptions={{
         activeTintColor: Colors.light.background,
+        headerShow: false,
         style: {
           backgroundColor: Colors.light.tint,
         },

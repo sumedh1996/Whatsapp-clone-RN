@@ -1,7 +1,7 @@
 import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
-import {ColorSchemeName, View} from 'react-native';
+import { ColorSchemeName, View } from 'react-native';
 import {
   Octicons,
   MaterialCommunityIcons,
@@ -45,7 +45,7 @@ function RootNavigator() {
       headerTitleAlign: 'left',
       headerTitleStyle: {
         fontWeight: 'bold',
-      }
+      }, headerShow: false
     }}>
       <Stack.Screen
         name="Root"
@@ -68,7 +68,7 @@ function RootNavigator() {
       <Stack.Screen
         name="ChatRoom"
         component={ChatRoomScreen}
-        options={({ route })  => ({
+        options={({ route }) => ({
           title: route.params.name,
           headerRight: () => (
             <View style={{
