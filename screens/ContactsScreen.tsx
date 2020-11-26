@@ -1,10 +1,19 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, FlatList } from 'react-native'
+import ChatListItem from '../components/ChatListItem';
 
-export default function ContactsScreen() {
+import users from '../data/users'
+import ContactListItem from '../components/ContactListItem';
+
+export default function ContactScreen() {
     return (
-        <View>
-            <Text>Hello</Text>
+        <View style={{ backgroundColor: 'white' }}>
+            <FlatList
+                data={users}
+                renderItem={({ item }) => <ContactListItem user={item} />}
+                keyExtractor={item => item.id}
+
+            />
         </View>
     )
 }
