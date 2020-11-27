@@ -26,7 +26,7 @@ const ContactListItem = (props: ContactListItem) => {
         graphqlOperation(
           createChatRoom, {
             input: {
-
+              lastMessageID: "6fbfefae-0191-4e29-8687-1715955480ad" //hardcoded when we create a new chatroom
             }
           }
         )
