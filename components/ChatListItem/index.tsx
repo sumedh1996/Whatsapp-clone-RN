@@ -14,19 +14,16 @@ const ChatListItem = (props: ChatListItemProps) => {
 
   const { chatRoom } = props;
   const [otherUser, setOtherUser] = useState(null);
-  const user = chatRoom.chatRoomUsers.items[0].user;
 
   const navigation = useNavigation();
 
   useEffect(() => {
-
     const getOtherUser = async () => {
       const userInfo = await Auth.currentAuthenticatedUser();
-
       if (chatRoom.chatRoomUsers.items[0].user.id === userInfo.attributes.sub) {
-        setOtherUser(chatRoom.chatRoomUsers.items[1].user)
+        setOtherUser(chatRoom.chatRoomUsers.items[1].user);
       } else {
-        chatRoom.chatRoomUsers.items[0].user
+        setOtherUser(chatRoom.chatRoomUsers.items[0].user);
       }
     }
     getOtherUser();
@@ -38,6 +35,7 @@ const ChatListItem = (props: ChatListItemProps) => {
       name: otherUser.name,
     })
   }
+
   if (!otherUser) {
     return null;
   }
